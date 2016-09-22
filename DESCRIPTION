@@ -1,0 +1,17 @@
+Package: RcmdrPlugin.PcaRobust
+Type: Package
+Title: R Commander Plug-in for Robust Principal Component Analysis
+Version: 1.1.4
+Date: 2016-09-21
+Author: Monalisa Sipahutar <11.6790@stis.ac.id>,Setia Pramana, Achmad Fauzi
+Maintainer: Achmad Fauzi Bagus F <fauzi.pandya@gmail.com>
+Description: The R commander plug-in for robust principal component analysis. The Graphical User Interface for Principal Component Analysis (PCA) with Hubert Algorithm method.
+Depends: R (>= 3.1.3)
+Imports: rrcov,tkrplot, Rcmdr, robustbase
+License: GPL-2
+LazyData: true
+RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2016-09-22 09:05:26 UTC; Achmad Fauzi
+Repository: CRAN
+Date/Publication: 2016-09-22 16:50:48

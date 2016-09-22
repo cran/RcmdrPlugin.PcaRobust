@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>Analisis Komponen Utama <i>Robust</i> dengan Metode ROBPCA</title>
+	
+	<body>
+		<div>
+		<font color="#000080" face="Bookman Old Style"><h2>RcmdrPlugin.PcaRobust</h2></font>
+		</div>
+		
+		<section>
+		<h3>Deskripsi</h3>
+		<p style="text-align:justify"><b><i>RcmdrPlugin.PcaRobust</i></b> adalah sebuah menu untuk analisis komponen utama <i>robust</i> dengan metode ROBPCA. Metode ROBCPCA adalah sebuah metode untuk mereduksi dimensi data tanpa dipengaruhi oleh <i>outlier</i>. Metode ini menggabungkan teknik <i>Projection Pursuit</i> yang digunakan dalam transformasi reduksi subruang pada langkah awal dengan penduga yang <i>robust</i> yang diperoleh dengan metode <i>Minimum Covariance Determinant</i> (MCD).</p>
+		</section>
+		
+		<section>
+		<h3>Penjelasan GUI</h3>
+		<img src="RcmdrPluginPcaRobust.png">
+		<table>
+			<tbody>
+				<tr valign="top">
+					<td><code>Variables</code></td>
+					<td><p style="text-align:justify">Nama semua variabel akan tampil dalam kotak. Pengguna dapat memilih variabel mana yang akan digunakan dalam penghitungan dengan meng-klik variabel yang diinginkan.</p></td>
+				</tr>
+				<tr valign="top">
+					<td><code>Confidence Interval</code></td>
+					<td><p style="text-align:justify">Pengguna dapat mengetikkan nilai <i>confidence interval</i>yang diinginkan. Nilai parameter (1-alpha) yaitu dari 0.5 sampai 1.</p></td>
+				</tr>
+				<tr valign="top">
+					<td><code>Options</code></td>
+					<td><p style="text-align:justify">Pengguna dapat mencentang <i>output</i> yang ingin ditampilkan. Pilihan <i>output</i> yang dapat ditampilkan yaitu <i>factor loadings</i> dan <i>scores</i>.</p></td>
+				</tr>
+				<tr valign="top">
+					<td><code>Plot</code></td>
+					<td><p style="text-align:justify">Pengguna dapat mencentang <i>plot</i> yang ingin ditampilkan. Pilihan <i>plot</i> yang dapat ditampilkan yaitu <i>screeplot, biplot, orthogonal distance plot, scores distance plot </i>dan<i> diagnostic plot</i>.</p></td>
+				</tr>
+				<tr valign="top">
+					<td><code>OK</code></td>
+					<td><p style="text-align:justify">Jika pengguna menekan tombol OK, maka hasil <i>summary principal component</i> akan tampil pada jendela <i>output</i> R-Commander. Selain itu, pilihan yang dicentang dalam <i>options</i> juga akan tampil pada jendela <i>output</i> R-Commander</p></td>
+				</tr>
+				<tr valign="top">
+					<td><code>Reset</code></td>
+					<td><p style="text-align:justify">Jika pengguna menekan tombol Reset, maka semua pilihan akan dihapus dan dikembalikan ke posisi awal. </p></td>
+				</tr>
+				<tr valign="top">
+					<td><code>Cancel</code></td>
+					<td><p style="text-align:justify">Jika pengguna menekan tombol Cancel, maka menu akan keluar (<i>exit</i>). </p></td>
+				</tr>
+				<tr valign="top">
+					<td><code>Help</code></td>
+					<td><p style="text-align:justify">Jika pengguna menekan tombol Help, maka akan menampilkan penjelasan tentang menu dan cara memakainya. </p></td>
+				</tr>
+			</tbody>
+		</table>
+		</section>
+		
+		<section>
+		<h3>Algoritma Metode ROBPCA</h3>
+		<p style="text-align:justify">Secara umum, algoritma metode ini terdiri dari 3 langkah yaitu :</p>
+		<p style="text-align:justify"><b>Langkah 1</b> : Dimulai dengan mereduksi ruang data menjadi subruang affine yang direntang oleh <i>n</i> observasi. Cara untuk mereduksi ruang ini yaitu dengan <i>Singular Value Decomposition</i>.</p>
+		<p style="text-align:justify"><b>Langkah 2</b> : Mencari subset sampel sebanyak <i>h</i> dimana besarnya <i>h</i> adalah nilai maksimum <i>(alpha*n)</i> atau <i>(n+p+1)/2</i>. Untuk mendapatkan subset sampel <i>h</i> tersebut, dilakukan dengan cara : </p>
+		<p style="text-align:justify">1. Menghitung nilai keterpencilan semua data dengan rumus <i>Stahel-Donoho.</i> Nilai keterpencilan diurutkan dari yang terkecil ke terbesar. Selanjutnya diambil subset sampel sebanyak <i>h</i> dengan nilai keterpencilan terkecil. Lalu dihitung vektor rataan dan matriks kovarian dari subset sampel <i>h</i> tersebut.<p style="text-align:justify">2. Lalu dicari nilai eigen dan vektor eigen dari matriks kovarian sebelumnya dan didekomposisi spektral. Sebanyak <i>k</i> komponen utama dipilih dan semua data diproyeksikan pada subruang berdimensi <i>k</i> yang direntang oleh <i>k</i> vektor ciri pertama sehingga diperoleh <i>Xn,k</i>.</p>
+		<p style="text-align:justify"><b>Langkah 3</b> : Mengestimasi secara <i>robust</i> titik-titik pada matriks <i>Xn,k</i> dengan penduga MCD sehingga diperoleh vektor rataan dan matriks kovarian yang <i>robust</i>.</p>
+		</section>
+		
+		<section>
+		<hr/>Contact : 11.6790@stis.ac.id
+		</section>
+	</body>	
+</html>
+</head>	

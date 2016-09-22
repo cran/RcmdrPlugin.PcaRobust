@@ -1,0 +1,4 @@
+# Some Rcmdr menus for the PcaRobust package
+# When the plug-in is loaded, these menus are merged with the standard Rcmdr menus
+# type  menu/item  operation/parent	label					command/menu	activation		install?
+item	dimensionalMenu command			"Robust Principal Component Analysis"				pcaRobust							"activeDataSetP()"		   "packageAvailable('RcmdrPlugin.PcaRobust')"
